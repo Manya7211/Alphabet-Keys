@@ -9,7 +9,7 @@ function add() {
 	img_imgTag = new Image();
 	img_imgTag.onload = uploadimg;
 	img_imgTag.src = img_image;
-
+}
 function uploadimg() {
 	ctx.drawImage(img_imgTag, img_x, img_y, img_width, img_height);
 }
@@ -19,15 +19,19 @@ function uploadimg() {
 function my_keydown(e) {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90))
-		//write a code to check the type of key pressed
+		if((keyPressed >=97 && keyPressed<=122) || (keyPressed >=65 && keyPressed<=90))
+		{
+		alphabetkey();
+		document.getElementById("d1").innerHTML = "You Pressed Alphabet Key";
+		console.log("alphabet key");
+		}
 	else {
 		otherkey();
 		document.getElementById("d1").innerHTML="You pressed symbol or other key";
 	}
 }
 
-function aplhabetkey() {
+function alphabetkey() {
 	img_image = "Alpkey.png";
 	add();
 }
